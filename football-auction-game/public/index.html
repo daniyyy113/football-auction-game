@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Player Auction Game | Live Real-time Bidding</title>
+  <meta name="description" content="Host or join real-time multiplayer football auctions with friends. Build your ultimate dream squad with live countdowns, bidding wars, and authentic football rosters.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+</head>
+<body id="landing-page">
+  <!-- Ambient background glow elements -->
+  <div class="bg-ambient">
+    <div class="ambient-blob-1"></div>
+    <div class="ambient-blob-2"></div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header -->
+  <header class="top-nav">
+    <div class="container top-nav-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-icon">⚽</span>
+        <span class="brand-title">FOOTBALL AUCTION</span>
+      </a>
+      <div class="nav-actions">
+        <button id="btn-open-join-modal" class="btn btn-secondary">
+          <span>Join Room</span>
+        </button>
+        <button id="btn-open-create-modal" class="btn btn-primary">
+          <span>+ Create Auction</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          REAL-TIME MULTIPLAYER FOOTBALL AUCTION
+        </div>
+        <h1 class="hero-title">
+          Build Your Ultimate Dream Squad <br>
+          <span class="text-gradient">Under The Hammer</span>
+        </h1>
+        <p class="hero-subtitle">
+          Experience the high-stakes thrill of a live football transfer window. Bid against friends in real-time, balance your €100M budget, outsmart rival managers, and sign world-class marquee stars.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-lg" onclick="document.getElementById('btn-open-create-modal').click()">
+            <span>🚀 Host an Auction</span>
+          </button>
+          <button class="btn btn-outline btn-lg" onclick="document.getElementById('btn-open-join-modal').click()">
+            <span>🎮 Enter Room Code</span>
+          </button>
+        </div>
+
+        <!-- Features Showcase Grid -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-heading">Real-Time Sockets</h3>
+            <p class="feature-desc">Instantaneous bidding with dynamic countdown timer resets, audio cues, and zero latency synchronization.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3 class="feature-heading">115+ Real Players</h3>
+            <p class="feature-desc">Curated database across Marquee, Elite, Standard, and Budget tiers with realistic ratings and base values.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3 class="feature-heading">Tactical Budgeting</h3>
+            <p class="feature-desc">Manage squad limits and millions in budget per club. Will you spend big on Mbappé or assemble deep squad depth?</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏆</div>
+            <h3 class="feature-heading">Multiplayer Rooms</h3>
+            <p class="feature-desc">No login or registration needed. Instant 6-digit room codes for 2 to 10 managers to clash with live squad rosters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Player Preview Ticker Section -->
+    <section class="container" style="margin: 40px auto 60px;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main);">Featured Marquee Signings</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">Real players ready to trigger bidding wars</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+        <div class="card" style="padding: 16px; text-align: center; border-color: var(--tier-marquee-glow);">
+          <div style="font-size: 28px; margin-bottom: 6px;">🇦🇷</div>
+          <div style="font-weight: 800; font-size: 16px;">Lionel Messi</div>
+          <div style="color: var(--text-muted); font-size: 12px;">Inter Miami • FWD</div>
+          <div style="margin-top: 8px; color: var(--tier-marquee); font-weight: 700; font-size: 14px;">Base: €18M</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center; border-color: var(--tier-marquee-glow);">
+          <div style="font-size: 28px; margin-bottom: 6px;">🇫🇷</div>
+          <div style="font-weight: 800; font-size: 16px;">Kylian Mbappé</div>
+          <div style="color: var(--text-muted); font-size: 12px;">Real Madrid • FWD</div>
+          <div style="margin-top: 8px; color: var(--tier-marquee); font-weight: 700; font-size: 14px;">Base: €25M</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center; border-color: var(--tier-marquee-glow);">
+          <div style="font-size: 28px; margin-bottom: 6px;">🇳🇴</div>
+          <div style="font-weight: 800; font-size: 16px;">Erling Haaland</div>
+          <div style="color: var(--text-muted); font-size: 12px;">Manchester City • FWD</div>
+          <div style="margin-top: 8px; color: var(--tier-marquee); font-weight: 700; font-size: 14px;">Base: €25M</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center; border-color: var(--tier-marquee-glow);">
+          <div style="font-size: 28px; margin-bottom: 6px;">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+          <div style="font-weight: 800; font-size: 16px;">Jude Bellingham</div>
+          <div style="color: var(--text-muted); font-size: 12px;">Real Madrid • MID</div>
+          <div style="margin-top: 8px; color: var(--tier-marquee); font-weight: 700; font-size: 14px;">Base: €23M</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       MODAL 1: CREATE ROOM
+       ====================================================================== -->
+  <div class="modal-backdrop" id="modal-create-room" role="dialog" aria-modal="true" aria-labelledby="create-modal-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="create-modal-title">🏆 Create New Auction</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="form-create-room">
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" style="margin-bottom: 0;">Choose Your Real Club</label>
+              <span style="font-size: 11px; color: var(--accent-light);">Official Club Roster</span>
+            </div>
+            <div class="club-picker-grid" id="create-club-picker" role="radiogroup">
+              <!-- Clubs populated via setupClubPicker -->
+            </div>
+            <input type="hidden" id="create-team-name" value="Real Madrid">
+            <input type="hidden" id="create-selected-emoji" value="👑">
+            <input type="hidden" id="create-selected-club-id" value="rma">
+
+            <!-- Custom Club Name Input (hidden unless Custom is chosen) -->
+            <div id="create-custom-club-box" style="display: none; margin-top: 10px;">
+              <label class="form-label" for="create-custom-team-name" style="font-size: 12px;">Custom Club Name</label>
+              <input type="text" id="create-custom-team-name" class="form-input" placeholder="e.g. Dani Dream XI" maxlength="30" autocomplete="off">
+            </div>
+
+            <div class="selected-club-banner" id="create-club-preview-banner">
+              <span class="club-preview-badge" id="create-emoji-preview">👑</span>
+              <div class="club-preview-details">
+                <span class="club-preview-name" id="create-team-name-preview">Real Madrid</span>
+                <span class="club-preview-league" id="create-league-preview">La Liga 🇪🇸</span>
+              </div>
+              <span class="club-preview-tag" id="create-short-preview">RMA</span>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="create-budget">Budget per Team (€M)</label>
+              <input type="number" id="create-budget" class="form-input" value="100" min="20" max="500" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="create-timer">Bid Timer (Seconds)</label>
+              <input type="number" id="create-timer" class="form-input" value="15" min="5" max="60" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="create-max-teams">Max Teams (2 - 10)</label>
+              <input type="number" id="create-max-teams" class="form-input" value="6" min="2" max="10" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="create-auction-type">Auction Type</label>
+              <select id="create-auction-type" class="form-input">
+                <option value="mini">Mini Auction (25 Stars)</option>
+                <option value="full" selected>Full Auction (115+ Players)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-submit-create" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">
+            <span>Create Auction Room</span>
+            <span>➔</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 2: JOIN ROOM
+       ====================================================================== -->
+  <div class="modal-backdrop" id="modal-join-room" role="dialog" aria-modal="true" aria-labelledby="join-modal-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="join-modal-title">🎮 Join Auction Room</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="form-join-room">
+          <div class="form-group">
+            <label class="form-label" for="join-room-code">Room Code (6 Characters)</label>
+            <input type="text" id="join-room-code" class="form-input" placeholder="e.g. 7K2B9X" required maxlength="6" style="text-transform: uppercase; font-family: monospace; font-size: 18px; letter-spacing: 2px;" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" style="margin-bottom: 0;">Choose Your Real Club</label>
+              <span style="font-size: 11px; color: var(--accent-light);">Official Club Roster</span>
+            </div>
+            <div class="club-picker-grid" id="join-club-picker" role="radiogroup">
+              <!-- Clubs populated via setupClubPicker -->
+            </div>
+            <input type="hidden" id="join-team-name" value="FC Barcelona">
+            <input type="hidden" id="join-selected-emoji" value="🔵🔴">
+            <input type="hidden" id="join-selected-club-id" value="fcb">
+
+            <!-- Custom Club Name Input (hidden unless Custom is chosen) -->
+            <div id="join-custom-club-box" style="display: none; margin-top: 10px;">
+              <label class="form-label" for="join-custom-team-name" style="font-size: 12px;">Custom Club Name</label>
+              <input type="text" id="join-custom-team-name" class="form-input" placeholder="e.g. My Football XI" maxlength="30" autocomplete="off">
+            </div>
+
+            <div class="selected-club-banner" id="join-club-preview-banner">
+              <span class="club-preview-badge" id="join-emoji-preview">🔵🔴</span>
+              <div class="club-preview-details">
+                <span class="club-preview-name" id="join-team-name-preview">FC Barcelona</span>
+                <span class="club-preview-league" id="join-league-preview">La Liga 🇪🇸</span>
+              </div>
+              <span class="club-preview-tag" id="join-short-preview">BAR</span>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-submit-join" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">
+            <span>Enter Room</span>
+            <span>➔</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Socket.io Client -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>if (typeof io === 'undefined') { document.write('<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"><\/script>'); }</script>
+  <!-- Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
